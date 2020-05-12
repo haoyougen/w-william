@@ -1,0 +1,9 @@
+k8s 有两套独立的账号系统
+1 User账号
+2 Service Account
+
+User账号是给人用的， SA是给pod里进程用的。
+User是全局的，   SA是namespace隔离的  ns下都有一个default的 SA,  pod启动后，
+               会将SA下的资源（cer.sa ,token ,namespace)以secret的方式挂载到pod上。用于访问API Server的权限。
+
+User的创建比较麻烦， SA很简单
